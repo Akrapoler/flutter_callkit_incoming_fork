@@ -178,7 +178,7 @@ public class Call: NSObject {
         self.ringtonePath = ""
         self.configureAudioSession = false
         self.audioSessionMode = ""
-        self.audioSessionActive = true
+        self.audioSessionActive = false
         self.audioSessionPreferredSampleRate = 44100.0
         self.audioSessionPreferredIOBufferDuration = 0.005
     }
@@ -217,7 +217,7 @@ public class Call: NSObject {
             self.ringtonePath = ios["ringtonePath"] as? String ?? ""
             self.configureAudioSession = ios["configureAudioSession"] as? Bool ?? false
             self.audioSessionMode = ios["audioSessionMode"] as? String ?? ""
-            self.audioSessionActive = ios["audioSessionActive"] as? Bool ?? true
+            self.audioSessionActive = ios["audioSessionActive"] as? Bool ?? false
             self.audioSessionPreferredSampleRate = ios["audioSessionPreferredSampleRate"] as? Double ?? 44100.0
             self.audioSessionPreferredIOBufferDuration = ios["audioSessionPreferredIOBufferDuration"] as? Double ?? 0.005
         }else {
@@ -234,7 +234,7 @@ public class Call: NSObject {
             self.ringtonePath = args["ringtonePath"] as? String ?? ""
             self.configureAudioSession = args["configureAudioSession"] as? Bool ?? false
             self.audioSessionMode = args["audioSessionMode"] as? String ?? ""
-            self.audioSessionActive = args["audioSessionActive"] as? Bool ?? true
+            self.audioSessionActive = args["audioSessionActive"] as? Bool ?? false
             self.audioSessionPreferredSampleRate = args["audioSessionPreferredSampleRate"] as? Double ?? 44100.0
             self.audioSessionPreferredIOBufferDuration = args["audioSessionPreferredIOBufferDuration"] as? Double ?? 0.005
         }
