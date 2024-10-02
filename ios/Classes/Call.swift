@@ -167,14 +167,14 @@ public class Call: NSObject {
         self.extra = [:]
         self.iconName = "CallKitLogo"
         self.handleType = ""
-        self.supportsVideo = true
+        self.supportsVideo = false
         self.maximumCallGroups = 2
         self.maximumCallsPerCallGroup = 1
         self.supportsDTMF = true
         self.supportsHolding = true
-        self.supportsGrouping = true
-        self.supportsUngrouping = true
-        self.includesCallsInRecents = true
+        self.supportsGrouping = false
+        self.supportsUngrouping = false
+        self.includesCallsInRecents = false
         self.ringtonePath = ""
         self.configureAudioSession = false
         self.audioSessionMode = ""
@@ -211,8 +211,8 @@ public class Call: NSObject {
             self.maximumCallsPerCallGroup = ios["maximumCallsPerCallGroup"] as? Int ?? 1
             self.supportsDTMF = ios["supportsDTMF"] as? Bool ?? true
             self.supportsHolding = ios["supportsHolding"] as? Bool ?? true
-            self.supportsGrouping = ios["supportsGrouping"] as? Bool ?? true
-            self.supportsUngrouping = ios["supportsUngrouping"] as? Bool ?? true
+            self.supportsGrouping = ios["supportsGrouping"] as? Bool ?? false
+            self.supportsUngrouping = ios["supportsUngrouping"] as? Bool ?? false
             self.includesCallsInRecents = ios["includesCallsInRecents"] as? Bool ?? false
             self.ringtonePath = ios["ringtonePath"] as? String ?? ""
             self.configureAudioSession = ios["configureAudioSession"] as? Bool ?? false
@@ -223,13 +223,13 @@ public class Call: NSObject {
         }else {
             self.iconName = args["iconName"] as? String ?? "CallKitLogo"
             self.handleType = args["handleType"] as? String ?? ""
-            self.supportsVideo = args["supportsVideo"] as? Bool ?? true
+            self.supportsVideo = args["supportsVideo"] as? Bool ?? false
             self.maximumCallGroups = args["maximumCallGroups"] as? Int ?? 2
             self.maximumCallsPerCallGroup =  args["maximumCallsPerCallGroup"] as? Int ?? 1
             self.supportsDTMF = args["supportsDTMF"] as? Bool ?? true
             self.supportsHolding = args["supportsHolding"] as? Bool ?? true
-            self.supportsGrouping = args["supportsGrouping"] as? Bool ?? true
-            self.supportsUngrouping = args["supportsUngrouping"] as? Bool ?? true
+            self.supportsGrouping = args["supportsGrouping"] as? Bool ?? false
+            self.supportsUngrouping = args["supportsUngrouping"] as? Bool ?? false
             self.includesCallsInRecents = args["includesCallsInRecents"] as? Bool ?? false
             self.ringtonePath = args["ringtonePath"] as? String ?? ""
             self.configureAudioSession = args["configureAudioSession"] as? Bool ?? false
