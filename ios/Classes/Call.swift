@@ -158,7 +158,7 @@ public class Call: NSObject {
     @objc public init(id: String, nameCaller: String, handle: String, type: Int) {
         self.uuid = id
         self.nameCaller = nameCaller
-        self.appName = "Callkit"
+        self.appName = "NNK_chats"
         self.handle = handle
         self.avatar = ""
         self.type = type
@@ -194,7 +194,7 @@ public class Call: NSObject {
     public init(args: [String: Any?]) {
         self.uuid = args["id"] as? String ?? ""
         self.nameCaller = args["nameCaller"] as? String ?? ""
-        self.appName = args["appName"] as? String ?? "nnk-chat"
+        self.appName = args["appName"] as? String ?? "NNK_chats"
         self.handle = args["handle"] as? String ?? ""
         self.avatar = args["avatar"] as? String ?? ""
         self.type = args["type"] as? Int ?? 0
