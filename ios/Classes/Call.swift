@@ -194,7 +194,7 @@ public class Call: NSObject {
     public init(args: [String: Any?]) {
         self.uuid = args["id"] as? String ?? ""
         self.nameCaller = args["nameCaller"] as? String ?? ""
-        self.appName = args["appName"] as? String ?? "Callkit"
+        self.appName = args["appName"] as? String ?? "nnk-chat"
         self.handle = args["handle"] as? String ?? ""
         self.avatar = args["avatar"] as? String ?? ""
         self.type = args["type"] as? Int ?? 0
@@ -206,16 +206,16 @@ public class Call: NSObject {
         if let ios = args["ios"] as? [String: Any] {
             self.iconName = ios["iconName"] as? String ?? "CallKitLogo"
             self.handleType = ios["handleType"] as? String ?? ""
-            self.supportsVideo = ios["supportsVideo"] as? Bool ?? true
+            self.supportsVideo = ios["supportsVideo"] as? Bool ?? false
             self.maximumCallGroups = ios["maximumCallGroups"] as? Int ?? 2
             self.maximumCallsPerCallGroup = ios["maximumCallsPerCallGroup"] as? Int ?? 1
             self.supportsDTMF = ios["supportsDTMF"] as? Bool ?? true
             self.supportsHolding = ios["supportsHolding"] as? Bool ?? true
             self.supportsGrouping = ios["supportsGrouping"] as? Bool ?? true
             self.supportsUngrouping = ios["supportsUngrouping"] as? Bool ?? true
-            self.includesCallsInRecents = ios["includesCallsInRecents"] as? Bool ?? true
+            self.includesCallsInRecents = ios["includesCallsInRecents"] as? Bool ?? false
             self.ringtonePath = ios["ringtonePath"] as? String ?? ""
-            self.configureAudioSession = ios["configureAudioSession"] as? Bool ?? true
+            self.configureAudioSession = ios["configureAudioSession"] as? Bool ?? false
             self.audioSessionMode = ios["audioSessionMode"] as? String ?? ""
             self.audioSessionActive = ios["audioSessionActive"] as? Bool ?? true
             self.audioSessionPreferredSampleRate = ios["audioSessionPreferredSampleRate"] as? Double ?? 44100.0
@@ -230,9 +230,9 @@ public class Call: NSObject {
             self.supportsHolding = args["supportsHolding"] as? Bool ?? true
             self.supportsGrouping = args["supportsGrouping"] as? Bool ?? true
             self.supportsUngrouping = args["supportsUngrouping"] as? Bool ?? true
-            self.includesCallsInRecents = args["includesCallsInRecents"] as? Bool ?? true
+            self.includesCallsInRecents = args["includesCallsInRecents"] as? Bool ?? false
             self.ringtonePath = args["ringtonePath"] as? String ?? ""
-            self.configureAudioSession = args["configureAudioSession"] as? Bool ?? true
+            self.configureAudioSession = args["configureAudioSession"] as? Bool ?? false
             self.audioSessionMode = args["audioSessionMode"] as? String ?? ""
             self.audioSessionActive = args["audioSessionActive"] as? Bool ?? true
             self.audioSessionPreferredSampleRate = args["audioSessionPreferredSampleRate"] as? Double ?? 44100.0
